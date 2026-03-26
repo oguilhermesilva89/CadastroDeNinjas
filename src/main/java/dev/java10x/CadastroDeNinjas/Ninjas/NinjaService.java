@@ -1,6 +1,7 @@
 package dev.java10x.CadastroDeNinjas.Ninjas;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,5 +30,10 @@ public class NinjaService {
     // Criar um novo ninja
     public NinjaModel criarNinja(NinjaModel ninja){
         return ninjaRepository.save(ninja);
+    }
+
+    // Deletar o ninja - tem que ser um metodo VOID
+    public void deletarNinjaPorId(Long id){
+        ninjaRepository.deleteById(id);
     }
 }
